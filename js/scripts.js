@@ -72,4 +72,57 @@ seasons[1] = 'construction'; // Replace "winter" with "construction."
 
 console.log( seasons );
 
+/**
+ * .concat()
+ * Merges two arrays.
+ */
 
+const originalSeasons = [
+  'summer',
+  'autumn',
+  'winter',
+  'spring'
+];
+
+const allSeasons = seasons.concat( originalSeasons ); // Merges our two arrays.
+console.log( allSeasons );
+
+/**
+ * Class (object blueprint)
+ */
+
+class Product { // We are defining the name of the class (TYPE of OBJECT.)
+  // Constructor method runs IMMEDIATELY on instantiation.
+  constructor ( name = 'Product', price = 0.00, category = 'uncategorized' )
+  { // Here is where we set up our class/object properties.
+    this.name = name;
+    this.price = Number( price );
+    this.category = category;
+  }
+  // A new method for the Product objects.
+  output ( element = null )
+  {
+    // Make sure something was passed in.
+    if ( element !== null )
+    {
+      // Populate the element.
+      element.innerHTML += `
+        <dl><!-- This is dynamic HTML! Wow! -->
+          <dt>Name:</dt>
+          <dd>${this.name}</dd><!-- Template literal: output JS variable value in a multi-line string (\`\`). -->
+          <!-- Otherwise we need to do concatenation! -->
+          <dt>Category:</dt>
+          <dd>${this.category}</dd>
+          <dt>Price:</dt>
+          <dd>${this.price}</dd>
+        </dl>
+      `;
+    }
+  }
+}
+
+const myFirstProduct = new Product();
+console.log( myFirstProduct );
+
+const aPartialProduct = new Product( 'Named Product', 16.55 );
+console.log( aPartialProduct );
