@@ -257,3 +257,9 @@ multiplesForm.addEventListener( 'submit', event => { // Keep track of "event" ob
     <dd>${result}</dd>
   `;
 } );
+
+/**
+ * Additional DOM Practice
+ */
+
+
