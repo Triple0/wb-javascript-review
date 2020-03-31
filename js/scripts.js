@@ -305,3 +305,75 @@ productForm.addEventListener( 'submit', event => {
   // Output the object (using our method!)
   newProduct.output( productSection ); // Output into body.
 } );
+
+/**
+ * String Methods (Working with Strings!)
+ */
+
+const str = 'Hello, World!';
+
+/**
+ * .toUpperCase() and .toLowerCase()
+ * (Self explanatory)
+ */
+
+console.log( str.toUpperCase() ); // HELLO, WORLD!
+console.log( str.toLowerCase() ); // hello, world!
+
+/**
+ * .includes( needle )
+ * Searching for a substring within your string.
+ * needle: Your search term.
+ */
+
+console.log( str.includes( 'Bob' ) ); // false // Bob not found!
+console.log( str.includes( 'Hello' ) ); // true // Hello was found!
+console.log( 'My name is Bob'.includes( 'ob' ) ); // true // ob was found!
+
+/**
+ * .slice( stringStart, stringEnd )
+ * Grabs a substring from your string.
+ * stringStart: Starting index/position in the string.
+ * stringEnd: The ending index/position in the string.
+ */
+
+// 'Hello, World!'
+console.log( str.slice( 3, 6 ) ); // "lo,"
+
+/**
+ * Let's try making a function to capitalize the first letter of a string.
+ */
+
+// Capitalize the first letter of a word.
+const capitalizeFirstLetter = string => {
+  // Get just the first letter.
+  let firstLetter = string.slice( 0, 1 );
+  // Capitalize this letter.
+  firstLetter = firstLetter.toUpperCase();
+  // Get updated string.
+  const updatedString = firstLetter + string.slice( 1, string.length );
+  // Return the result.
+  return updatedString;
+}
+
+console.log( capitalizeFirstLetter( 'my lowercase sentence' ) ); // My lowercase sentence
+console.log( capitalizeFirstLetter( 'a word' ) );
+console.log( capitalizeFirstLetter( ' starts with a space' ) );
+console.log( capitalizeFirstLetter( 'ALREADY CAPS' ) );
+
+// Capitalize the first letter of every word in a sentence.
+const capitalizeFirstLetterInSentence = string => {
+  // Split our sentence into words (based on space.)
+  const words = string.split( ' ' ); // String becomes an Array.
+  // Loop through each word in the sentence.
+  for ( let i = 0; i < words.length; i++ ) {
+    words[i] = capitalizeFirstLetter( words[i] );
+  }
+  // Glue our sentence back together.
+  const sentence = words.join( ' ' ); // Array becomes a String.
+  // Return the result.
+  return sentence;
+}
+
+console.log( capitalizeFirstLetterInSentence( 'my lowercase sentence' ) ); // My Lowercase Sentence
+console.log( capitalizeFirstLetterInSentence( ' starts with a space' ) );
