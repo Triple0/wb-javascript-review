@@ -144,6 +144,7 @@ const myElement = document.body; // Target body.
 // aPartialProduct.output( myElement ); // Output another product.
 
 /**
+ * FOR...OF LOOP
  * Looping iterables.
  */
 
@@ -162,8 +163,36 @@ for ( let product of myProducts ) { // "product" is the current element in the a
 /**
  * ALTERNATIVELY WE COULD HAVE TYPED...
  * for ( let i = 0; i < myProducts.length; i = i + 1 )
+ * {
+ *    console.log( myProducts[i] );
+ *    myProducts[i].output( myElement );
+ * }
  * This would have been equivalent but requires a bit more setup.
  */
 
+// Get a property from an object by typing...
+// object name, a period, then the name of the
+// property. In this case: shoe.price
+console.log( 'Shoe\'s price property value: ' + shoe.price );
 
- 
+/**
+ * WHILE LOOP
+ * while( TERMINATION CONDITION )
+ */
+
+let myIterator = 0;
+while ( myIterator < 8 )
+{
+  console.log( 'WHILE ITERATOR: ' + myIterator );
+  myIterator = myIterator + 2;
+}
+
+/**
+ * FOR LOOP
+ * for ( DECLARATION; TERMINATION CONDITION; INCREMENT )
+ */
+
+for ( let thisIterator = 50; thisIterator >= 20; thisIterator = thisIterator - 3 )
+{
+  console.log( 'FOR LOOP ITERATOR: ' + thisIterator );
+}
