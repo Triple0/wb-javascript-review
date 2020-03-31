@@ -132,3 +132,38 @@ const aPartialProduct = new Product( 'Named Product', 16.55 );
 console.log( aPartialProduct );
 
 console.log( aPartialProduct.priceWithTax() ); // Run a method.
+
+const shoe = new Product(
+  'Nike Shoe',
+  54.87,
+  'footwear'
+);
+
+const myElement = document.body; // Target body.
+// shoe.output( myElement ); // Output our Product/shoe data.
+// aPartialProduct.output( myElement ); // Output another product.
+
+/**
+ * Looping iterables.
+ */
+
+const myProducts = [ myFirstProduct, aPartialProduct, shoe ];
+
+// Traditional "for" loop is ( DECLARATION; TERMINATION CONDITION; ITERATION )
+// ES6 affords us an alternative syntax for looping through an
+// iterable (an object, or array.) For...Of loops allow us to
+// target each element in the array, looping through one at a
+// time without having to know the length etc.
+for ( let product of myProducts ) { // "product" is the current element in the array as we loop through.
+  console.log( product ); // Output each product in console.
+  product.output( myElement ); // Output each product in HTML.
+}
+
+/**
+ * ALTERNATIVELY WE COULD HAVE TYPED...
+ * for ( let i = 0; i < myProducts.length; i = i + 1 )
+ * This would have been equivalent but requires a bit more setup.
+ */
+
+
+ 
