@@ -196,3 +196,32 @@ for ( let thisIterator = 50; thisIterator >= 20; thisIterator = thisIterator - 3
 {
   console.log( 'FOR LOOP ITERATOR: ' + thisIterator );
 }
+
+/**
+ * FUNCTIONS
+ * Let's practice using an Edabit example:
+ * @link https://edabit.com/challenge/ebcd4Xu8TLizaj6dm
+ */
+
+// Arrow function declaration. ( 2 parameters )
+const arrayOfMultiples = ( num, length ) => {
+  num = Number( num ); // Converting num into a Number.
+  length = Number( length ); // Converting length into a Number.
+  let i = 1; // Setting an iterator.
+  let arr = []; // Declaring our array.
+
+  // Loop (length) number of times.
+  while ( i <= length ) {
+    // Add an item to our array PER loop.
+    arr.push( num * i ); // num * i is the value we're adding the array.
+    i = i + 1; // Iterating our iterator so the loop DOES END.
+    // i++; // This would do the same thing.
+  }
+
+  // Return the value.
+  return arr;
+}
+
+console.log( arrayOfMultiples( 7, 5 ) );
+console.log( arrayOfMultiples( 12, 10 ) );
+console.log( arrayOfMultiples( 17, 6 ) );
