@@ -99,8 +99,12 @@ class Product { // We are defining the name of the class (TYPE of OBJECT.)
     this.price = Number( price );
     this.category = category;
   }
+  // Add tax to our price (returns value.)
+  priceWithTax () {
+    return Number( this.price ) * 1.05;
+  }
   // A new method for the Product objects.
-  output ( element = null )
+  output ( element = null ) // Void method (no return.)
   {
     // Make sure something was passed in.
     if ( element !== null )
@@ -121,8 +125,10 @@ class Product { // We are defining the name of the class (TYPE of OBJECT.)
   }
 }
 
-const myFirstProduct = new Product();
+const myFirstProduct = new Product(); // We use "new" to instantiate an object from a class.
 console.log( myFirstProduct );
 
 const aPartialProduct = new Product( 'Named Product', 16.55 );
 console.log( aPartialProduct );
+
+console.log( aPartialProduct.priceWithTax() ); // Run a method.
