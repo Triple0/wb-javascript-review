@@ -377,3 +377,18 @@ const capitalizeFirstLetterInSentence = string => {
 
 console.log( capitalizeFirstLetterInSentence( 'my lowercase sentence' ) ); // My Lowercase Sentence
 console.log( capitalizeFirstLetterInSentence( ' starts with a space' ) );
+
+/**
+ * .replace( needle, newtext )
+ * Replaces a substring within a string.
+ * needle: The substring we're looking for.
+ * newtext: What we want to replace the substring with.
+ */
+
+console.log( str.replace( 'ello', 'ey' ) ); // Hey, World!
+
+console.log( str.replace( 'l', 'o' ) ); // Heolo, World!
+// Only affects the first instance of the character...
+
+console.log( str.replace( /l/g, 'o' ) ); // Heooo, Worod!
+// Regular expression (RegEx) with a global marker selects all of them!
