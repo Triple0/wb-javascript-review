@@ -262,4 +262,46 @@ multiplesForm.addEventListener( 'submit', event => { // Keep track of "event" ob
  * Additional DOM Practice
  */
 
+const productForm = document.querySelector( '#product-form' ); // # for ID, . for class.
+const productNameField = document.querySelector( '[name="name"]' ); // Attribute selector [attribute="value"]
+const productPriceField = document.querySelector( '[name="price"]' );
+const productCategoryField = document.querySelector( '[name="category"]' );
+const productSection = document.querySelector( 'section' );
+// document.querySelectorAll( '.my-class' );
 
+/*
+
+OLD FUNCTION:
+
+  function ( myParam ) {
+
+  }
+
+ARROW FUNCTION:
+
+  myParam => {
+
+  }
+
+*/
+
+// Listen to the form for a submission.
+productForm.addEventListener( 'submit', event => {
+  // Make sure the form doesn't ACTUALLY submit.
+  event.preventDefault();
+
+  // Retrieve values from fields.
+  const productNameFieldValue = productNameField.value;
+  const productPriceFieldValue = productPriceField.value;
+  const productCategoryFieldValue = productCategoryField.value;
+
+  // Form a new object.
+  const newProduct = new Product(
+    productNameFieldValue,
+    productPriceFieldValue,
+    productCategoryFieldValue
+  );
+
+  // Output the object (using our method!)
+  newProduct.output( productSection ); // Output into body.
+} );
