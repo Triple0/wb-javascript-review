@@ -12,6 +12,7 @@
  * - Instantiate an object or object(s) of a class.
  * - Add an element to an array.
  * - Loop through (iterate through) an array.
+ * - If you are adding functions or using methods, use ES6 standard.
  */
 
 class Article {
